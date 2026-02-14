@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduConsult | Professional Admissions Partners</title>
+    <title>EduConsult | International Education Partners</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         :root {
+            --alabaster: #fafaf9;   /* Main Background */
+            --midnight: #0f172a;    /* Primary Text & Dark Sections */
+            --slate-blue: #64748b;  /* Sub-headings */
+            --accent: #2563eb;      /* Brand Blue */
+            --border: #e2e8f0;      /* Hairline borders */
             --white: #ffffff;
-            --slate-light: #f1f5f9; /* The second background color */
-            --navy-deep: #0f172a;   /* Primary Text & Accents */
-            --accent-blue: #2563eb;  /* Call to action color */
-            --text-muted: #64748b;
-            --border: #e2e8f0;
         }
 
         * {
@@ -25,140 +28,173 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            background-color: var(--white);
-            color: var(--navy-deep);
-            line-height: 1.6;
+            background-color: var(--alabaster);
+            color: var(--midnight);
+            line-height: 1.7;
         }
 
-        /* --- Navigation --- */
+        /* --- Sophisticated Navigation --- */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 10%;
-            background: var(--white);
+            padding: 1.2rem 10%;
+            background: rgba(250, 250, 249, 0.9);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; }
-        .logo span { color: var(--accent-blue); }
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            letter-spacing: -0.5px;
+            color: var(--midnight);
+        }
+        .logo span { color: var(--accent); }
 
-        .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+        .nav-links { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
         .nav-links a { 
             text-decoration: none; 
-            color: var(--navy-deep); 
+            color: var(--midnight); 
             font-size: 0.9rem; 
-            font-weight: 600;
+            font-weight: 500;
             transition: 0.3s;
         }
-        .nav-links a:hover { color: var(--accent-blue); }
+        .nav-links a:hover { color: var(--accent); }
 
-        .btn-contact {
-            background: var(--navy-deep);
+        .btn-nav {
+            background: var(--midnight);
             color: var(--white) !important;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
         }
 
-        /* --- Hero Section (Split Background) --- */
+        /* --- Hero Section --- */
         .hero {
-            display: flex;
+            padding: 120px 10%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
             align-items: center;
-            min-height: 80vh;
-            padding: 0 10%;
-            background: linear-gradient(90deg, var(--white) 50%, var(--slate-light) 50%);
-        }
-
-        .hero-content {
-            flex: 1;
-            padding-right: 50px;
+            background: linear-gradient(135deg, var(--alabaster) 60%, #f1f5f9 100%);
+            min-height: 85vh;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
         }
 
-        .hero-content h1 span { color: var(--accent-blue); }
+        .hero-content h1 span {
+            display: block;
+            color: var(--accent);
+        }
 
         .hero-content p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            max-width: 500px;
+            font-size: 1.2rem;
+            color: var(--slate-blue);
+            max-width: 550px;
+            margin-bottom: 40px;
         }
 
-        .cta-btn {
+        .cta-group { display: flex; gap: 15px; }
+
+        .btn-primary {
             text-decoration: none;
-            background: var(--accent-blue);
+            background: var(--accent);
             color: var(--white);
-            padding: 15px 35px;
-            border-radius: 8px;
+            padding: 16px 35px;
+            border-radius: 4px;
             font-weight: 700;
-            display: inline-block;
             transition: 0.3s;
         }
 
-        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2); }
 
-        /* --- Services Section (Full Color Background) --- */
+        /* --- Stats Integrated Section --- */
+        .stats-strip {
+            padding: 40px 10%;
+            display: flex;
+            gap: 60px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat-item b { font-size: 1.5rem; display: block; }
+        .stat-item span { font-size: 0.8rem; color: var(--slate-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- Services Section --- */
         .services {
-            padding: 100px 10%;
-            background-color: var(--slate-light); /* Integrated color background */
+            padding: 120px 10%;
+            background: var(--white);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 60px;
-            font-weight: 800;
+        .section-header {
+            max-width: 600px;
+            margin-bottom: 80px;
         }
 
-        .services-container {
+        .section-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .section-header p { color: var(--slate-blue); }
+
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .service-card {
-            background: var(--white);
-            padding: 45px;
-            border-radius: 12px;
+            padding: 50px;
             border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: 0.4s;
+        }
+
+        .service-card:hover {
+            background: var(--midnight);
+            border-color: var(--midnight);
+        }
+
+        .service-card:hover h3, .service-card:hover p, .service-card:hover i {
+            color: var(--white);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 30px;
             transition: 0.3s;
         }
 
-        .service-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
-
-        .service-card i {
-            font-size: 2rem;
-            color: var(--accent-blue);
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 { margin-bottom: 15px; font-weight: 700; }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 700; }
+        .service-card p { color: var(--slate-blue); font-size: 1rem; }
 
         /* --- Footer --- */
         footer {
-            padding: 40px 10%;
-            text-align: center;
-            background: var(--white);
+            padding: 60px 10%;
+            background: var(--alabaster);
             border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--slate-blue);
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            .hero { background: var(--white); text-align: center; padding-top: 50px; }
-            .hero-content { padding-right: 0; }
+        /* Mobile Optimization */
+        @media (max-width: 968px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 60px; }
+            .hero-content p { margin: 0 auto 40px; }
+            .cta-group { justify-content: center; }
+            .stats-strip { flex-wrap: wrap; justify-content: center; gap: 30px; }
             .nav-links { display: none; }
         }
     </style>
@@ -166,45 +202,59 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Edu<span>Consult</span></div>
+        <div class="logo">Edu<span>Consult.</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact" class="btn-contact">Contact Us</a></li>
+            <li><a href="#services">Expertise</a></li>
+            <li><a href="#contact" class="btn-nav">Get Started</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Expert Guidance for Your <span>Academic Journey</span></h1>
-            <p>We help students find the right universities and navigate the admission process with ease and precision.</p>
-            <a href="#services" class="cta-btn">Explore Services</a>
+            <h1>Expert Guidance for Your <span>Academic Journey.</span></h1>
+            <p>Empowering students to reach their full potential through strategic university selection and seamless admission management.</p>
+            <div class="cta-group">
+                <a href="#services" class="btn-primary">Our Expertise</a>
+            </div>
         </div>
+        <div class="hero-visual">
+            </div>
+    </section>
+
+    <section class="stats-strip">
+        <div class="stat-item"><b>500+</b><span>Successful Admissons</span></div>
+        <div class="stat-item"><b>15+</b><span>Global Countries</span></div>
+        <div class="stat-item"><b>100%</b><span>Dedication</span></div>
     </section>
 
     <section id="services" class="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-container">
+        <div class="section-header">
+            <h2>Our Core Expertise</h2>
+            <p>Comprehensive solutions designed to navigate the complexities of international education.</p>
+        </div>
+        <div class="services-grid">
             <div class="service-card">
                 <i class="fas fa-university"></i>
                 <h3>University Selection</h3>
-                <p>Personalized lists of top universities based on your profile, budget, and long-term career goals.</p>
+                <p>We curate a personalized list of institutions that align with your academic background and career goals.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-file-signature"></i>
                 <h3>Admission Support</h3>
-                <p>Step-by-step guidance on applications, statement of purpose, and meticulous documentation.</p>
+                <p>From drafting your SOP to final application submission, we ensure every detail is perfect.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-passport"></i>
                 <h3>Visa Assistance</h3>
-                <p>Expert help with visa documentation and rigorous interview preparation to ensure high success rates.</p>
+                <p>Navigating visa protocols with expert documentation support and interview coaching.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 EduConsult. Providing Excellence in International Education Consultancy.</p>
+        <div class="footer-logo"><b>EduConsult</b></div>
+        <div class="copyright">&copy; 2026 EduConsult. All rights reserved.</div>
     </footer>
 
 </body>
