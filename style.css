@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --navy: #0A192F;        /* Main brand color */
-    --navy-light: #112240;  /* Secondary dark */
-    --gold: #C5A059;        /* Sophisticated accent */
-    --champagne: #F8F4ED;   /* Warm section background */
-    --slate: #8892B0;       /* Muted text */
-    --white: #FFFFFF;
-    --border: rgba(255, 255, 255, 0.1);
+    --bg-main: #0f172a;        /* Midnight Blue */
+    --bg-secondary: #1e293b;   /* Slate Blue */
+    --accent: #38bdf8;        /* Sky Blue */
+    --text-high: #f8fafc;     /* Near White */
+    --text-mid: #94a3b8;      /* Steel Gray */
+    --border: rgba(255, 255, 255, 0.06);
 }
 
 * {
@@ -18,8 +17,8 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--navy); /* Dark mode by default for high-end feel */
-    color: var(--white);
+    background-color: var(--bg-main);
+    color: var(--text-high);
     line-height: 1.6;
     scroll-behavior: smooth;
 }
@@ -30,8 +29,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 10%;
-    background: rgba(10, 25, 47, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,13 +38,13 @@ body {
 }
 
 .logo {
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 1px;
     font-size: 1.2rem;
-    color: var(--gold);
+    color: var(--text-high);
 }
 
-.logo span { color: var(--white); font-weight: 300; }
+.logo span { color: var(--accent); }
 
 .nav-links {
     display: flex;
@@ -55,126 +54,119 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--slate);
+    color: var(--text-mid);
     font-size: 0.9rem;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { color: var(--accent); }
 
-.btn-minimal {
-    padding: 10px 24px;
-    border: 1px solid var(--gold);
-    color: var(--gold) !important;
-    border-radius: 4px;
-}
-
-.btn-minimal:hover {
-    background: var(--gold);
-    color: var(--navy) !important;
+.btn-contact {
+    padding: 8px 20px;
+    background: var(--accent);
+    color: var(--bg-main) !important;
+    border-radius: 6px;
+    font-weight: 700;
 }
 
 /* --- Hero Section --- */
 .hero {
-    padding: 160px 10%;
-    background: radial-gradient(circle at top right, var(--navy-light), var(--navy));
-}
-
-.badge {
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 5px 15px;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    border-radius: 2px;
+    padding: 140px 10%;
+    background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 60%);
+    text-align: left;
 }
 
 .hero h1 {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    margin: 25px 0;
-    color: var(--white);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
 }
 
-.hero h1 span { color: var(--gold); }
+.hero h1 span {
+    color: var(--accent);
+}
 
 .hero p {
-    color: var(--slate);
-    max-width: 600px;
-    font-size: 1.1rem;
+    color: var(--text-mid);
+    max-width: 550px;
+    font-size: 1.15rem;
     margin-bottom: 40px;
 }
 
-.main-btn {
+.cta-btn {
     text-decoration: none;
-    background: var(--gold);
-    color: var(--navy);
-    padding: 16px 40px;
-    font-weight: 600;
-    border-radius: 4px;
+    background: transparent;
+    color: var(--accent);
+    padding: 14px 32px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-weight: 700;
     transition: 0.3s;
+    display: inline-block;
 }
 
-.main-btn:hover {
-    background: var(--white);
-    transform: translateY(-3px);
+.cta-btn:hover {
+    background: var(--accent);
+    color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
-/* --- Stats Bar (Light Contrast) --- */
-.stats {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 10%;
-    background: var(--champagne);
-    color: var(--navy);
-}
-
-.stat-card strong { font-size: 2.2rem; display: block; color: var(--navy); }
-.stat-card span { color: var(--gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
-
-/* --- Services --- */
+/* --- Services Section --- */
 .services {
-    padding: 120px 10%;
-    background: var(--navy);
+    padding: 100px 10%;
+    background-color: var(--bg-secondary);
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 80px;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 60px;
 }
 
-.services-grid {
+.services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.service-item {
+.service-card {
+    background: var(--bg-main);
     padding: 50px 40px;
-    background: var(--navy-light);
+    border-radius: 16px;
     border: 1px solid var(--border);
     transition: 0.3s ease;
 }
 
-.service-item:hover {
-    border-color: var(--gold);
+.service-card:hover {
+    border-color: var(--accent);
     transform: translateY(-10px);
 }
 
-.icon-box {
-    color: var(--gold);
-    font-size: 2rem;
-    margin-bottom: 20px;
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 25px;
 }
 
-.service-item h3 { color: var(--white); margin-bottom: 15px; }
-.service-item p { color: var(--slate); }
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.service-card p {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+}
 
 /* --- Footer --- */
-.footer {
-    padding: 60px 10%;
-    border-top: 1px solid var(--border);
+footer {
+    padding: 40px 10%;
     text-align: center;
-    color: var(--slate);
-    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-mid);
+    font-size: 0.85rem;
 }
