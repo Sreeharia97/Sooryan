@@ -13,43 +13,93 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Specific styles for the Courses Grid */
-        .search-container {
-            padding: 40px 8%;
+        /* Internal Page Specific Styles */
+        :root {
+            --white: #ffffff;
+            --dark-blue: #0f172a; 
+            --royal-blue: #2563eb; 
+            --border: #e2e8f0;
+            --slate: #64748b;
+            --slate-light: #94a3b8;
+        }
+
+        /* Search Section - White Background */
+        .search-hero {
+            padding: 80px 8%;
             background: var(--white);
             text-align: center;
+            border-bottom: 1px solid var(--border);
         }
+
+        .search-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .search-hero h1 span { color: var(--royal-blue); }
+
+        .search-bar-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
         .search-bar {
             width: 100%;
-            max-width: 600px;
-            padding: 15px 25px;
+            padding: 18px 30px;
             border: 2px solid var(--border);
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             outline: none;
             transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .search-bar:focus { border-color: var(--royal-blue); }
+
+        .search-bar:focus {
+            border-color: var(--royal-blue);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Course Grid - Dark Blue Background (Matching Home) */
+        .bg-dark-section {
+            background-color: var(--dark-blue);
+            padding: 100px 8%;
+            color: var(--white);
+        }
 
         .college-tag {
             display: inline-block;
-            background: var(--light-blue);
+            background: rgba(37, 99, 235, 0.1);
             color: var(--royal-blue);
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
         }
-        
+
         .course-meta {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid var(--border);
             font-size: 0.85rem;
             color: var(--slate);
+        }
+
+        .course-meta span i {
+            color: var(--royal-blue);
+            margin-right: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .search-hero { padding: 60px 5%; }
+            .search-hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -67,94 +117,96 @@
         </ul>
     </nav>
 
-    <section class="bg-dark-section" style="text-align: center; padding: 80px 8%;">
-        <div class="section-title">
-            <h2 style="color: white;">Browse 1000+ Courses</h2>
-            <p style="color: var(--slate-light);">Direct information from 100+ verified Colleges & Universities.</p>
+    <section class="search-hero">
+        <h1>Find the <span>Right Course</span> For You</h1>
+        <p style="color: var(--slate); margin-bottom: 30px;">1000+ Courses | 100+ Colleges | 100% Genuine Information Directly from Institutions.</p>
+        <div class="search-bar-wrapper">
+            <input type="text" class="search-bar" placeholder="Search by course name or college (e.g. MBA, Engineering)...">
         </div>
     </section>
 
-    <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Search for Engineering, MBA, Medical, or a specific College...">
-    </div>
-
-    <section id="course-list" style="padding: 40px 8%;">
+    <section class="bg-dark-section">
+        <div class="section-title">
+            <h2 style="color: white; text-align: center; margin-bottom: 60px;">Explore Popular Categories</h2>
+        </div>
+        
         <div class="grid-container">
-            
             <div class="card">
                 <span class="college-tag">Direct Institutional Info</span>
-                <h3>B.Tech in Computer Science</h3>
-                <p>Learn AI, Data Science, and Software Development from top engineering colleges.</p>
+                <h3>B.Tech / Engineering</h3>
+                <p>Computer Science, AI, and Mechanical branches with verified fee structures from 45+ colleges.</p>
                 <div class="course-meta">
-                    <span><i class="fas fa-university"></i> 45 Colleges</span>
-                    <span><i class="fas fa-clock"></i> 4 Years</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="college-tag">Scholarships Available</span>
-                <h3>Master of Business Admin (MBA)</h3>
-                <p>Specializations in Finance, Marketing, and HR with direct industry placements.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-university"></i> 30 Colleges</span>
-                    <span><i class="fas fa-clock"></i> 2 Years</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="college-tag">Genuine Fee Structure</span>
-                <h3>B.Sc. Nursing / Medical</h3>
-                <p>Verified medical courses with clinical training and 100% genuine documentation.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-university"></i> 25 Colleges</span>
-                    <span><i class="fas fa-clock"></i> 3-4 Years</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="college-tag">Campus Visit Open</span>
-                <h3>Hotel Management</h3>
-                <p>Practical training in 5-star environments. Experience the campus before joining.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-university"></i> 12 Colleges</span>
-                    <span><i class="fas fa-clock"></i> 3 Years</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="college-tag">100% Secure Info</span>
-                <h3>B.Com / M.Com Professional</h3>
-                <p>Accounting and Finance courses with CA/CS integrated options.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-university"></i> 50 Colleges</span>
-                    <span><i class="fas fa-clock"></i> 3 Years</span>
+                    <span><i class="fas fa-university"></i> 45+ Colleges</span>
+                    <span><i class="fas fa-calendar-alt"></i> 4 Years</span>
                 </div>
             </div>
 
             <div class="card">
                 <span class="college-tag">Finance Options</span>
-                <h3>Polytechnic & Diploma</h3>
-                <p>Quick skill-based courses to get you job-ready in technical fields.</p>
+                <h3>Management (MBA/BBA)</h3>
+                <p>Top-tier management courses with direct scholarship and finance guidance available.</p>
                 <div class="course-meta">
-                    <span><i class="fas fa-university"></i> 20 Colleges</span>
-                    <span><i class="fas fa-clock"></i> 3 Years</span>
+                    <span><i class="fas fa-university"></i> 30+ Colleges</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2-3 Years</span>
                 </div>
             </div>
 
+            <div class="card">
+                <span class="college-tag">100% Safe & Secure</span>
+                <h3>Medical & Healthcare</h3>
+                <p>Nursing, Pharmacy, and Allied Health courses with genuine information directly from institutions.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-university"></i> 25+ Colleges</span>
+                    <span><i class="fas fa-calendar-alt"></i> 3-4 Years</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="college-tag">Campus Visit Open</span>
+                <h3>Hospitality & Tourism</h3>
+                <p>Experience the campus firsthand. Practical-heavy courses in verified luxury hotel environments.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-university"></i> 12+ Colleges</span>
+                    <span><i class="fas fa-calendar-alt"></i> 3 Years</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="college-tag">Experienced Counsellors</span>
+                <h3>Arts & Humanities</h3>
+                <p>Explore Psychology, Design, and Literature. Let our counsellors help you decide your path.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-university"></i> 50+ Colleges</span>
+                    <span><i class="fas fa-calendar-alt"></i> 3 Years</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="college-tag">Genuine Information</span>
+                <h3>Vocational & Diploma</h3>
+                <p>Quick, skill-based courses directly from institutions to get you job-ready fast.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-university"></i> 20+ Colleges</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1-2 Years</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="bg-dark-section" style="text-align: center;">
-        <h2 style="color: white;">Can't find what you're looking for?</h2>
-        <p style="color: var(--slate-light); margin: 20px 0 30px;">Our counsellors can help you filter through 1000+ courses based on your budget and interests.</p>
-        <a href="contact.html" class="btn-cta" style="padding: 15px 40px;">Get Free Guidance</a>
+    <section style="background: var(--white); text-align: center; padding: 100px 8%;">
+        <div class="section-title">
+            <h2>Can't decide?</h2>
+            <p>Our experienced counsellors are ready to help you pick the college that truly suits you.</p>
+            <br>
+            <a href="contact.html" class="btn-cta" style="padding: 15px 40px; font-size: 1.1rem; text-decoration: none;">Get Free Guidance Today</a>
+        </div>
     </section>
 
     <footer class="main-footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="logo">Edu<span>Consult</span></div>
-                <p style="margin-top: 15px;">Making high-quality education accessible and transparent for every student.</p>
+                <p style="margin-top: 15px;">Your trusted partner for 100% genuine institutional information.</p>
             </div>
             <div class="footer-col">
                 <h4>Support</h4>
@@ -162,13 +214,13 @@
                 <p>+91 98765 43210</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4>Important Links</h4>
                 <a href="index.html">Home</a>
                 <a href="earn-with-us.html">Earn with Us</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 EduConsult. All genuine information directly from institutions.</p>
+            <p>&copy; 2026 EduConsult. 100% Safe and Secure Informed Choices.</p>
         </div>
     </footer>
 
