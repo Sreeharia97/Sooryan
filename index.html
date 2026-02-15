@@ -44,20 +44,20 @@
             z-index: 1000;
         }
 
-        /* Styling for Logo and Name alignment */
         .logo { 
             font-weight: 800; 
             font-size: 1.4rem; 
             color: var(--royal-blue); 
             display: flex; 
             align-items: center; 
-            gap: 10px; 
+            gap: 12px; 
         }
         .logo span { color: var(--deep-navy); }
         .logo img {
-            height: 40px; /* Adjust height as needed */
+            height: 45px; /* Professional size */
             width: auto;
-            border-radius: 4px;
+            max-width: 150px; /* Prevents overflow */
+            object-fit: contain;
         }
 
         .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
@@ -121,7 +121,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Edu<span>Consult</span> <img src="logo.jpg" alt="EduConsult Logo"></div>
+        <div class="logo">Edu<span>Consult</span> <img src="logo.png" alt="EduConsult Logo"></div>
         
         <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
         <ul class="nav-links" id="nav-list">
@@ -205,7 +205,7 @@
     <footer class="main-footer" id="contact">
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo">Edu<span>Consult</span> <img src="logo.jpg" alt="EduConsult Logo"></div>
+                <div class="logo">Edu<span>Consult</span> <img src="logo.png" alt="EduConsult Logo"></div>
                 <p style="margin-top: 15px;">Trustworthy information for every step of your education journey.</p>
                 <div class="social-links">
                     <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
