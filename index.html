@@ -7,17 +7,16 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
+            --primary-dark: #020617;
+            --secondary-dark: #0f172a;
+            --accent-blue: #2563eb;
             --white: #ffffff;
-            --dark-blue: #0f172a; /* New Deep Dark Blue Background */
-            --royal-blue: #2563eb; /* Vibrant Blue for Buttons/Links */
-            --deep-navy: #020617;  /* Heaviest Navy for Text */
-            --slate: #64748b;      /* Muted Text for White Backgrounds */
-            --slate-light: #94a3b8; /* Muted Text for Dark Backgrounds */
+            --slate: #64748b;
+            --slate-light: #94a3b8;
             --whatsapp: #25d366;
             --border: #e2e8f0;
         }
@@ -33,11 +32,12 @@
 
         body {
             background-color: var(--white);
-            color: var(--deep-navy);
+            color: var(--primary-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* --- Navigation --- */
+        /* --- Updated Navigation Bar --- */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -50,33 +50,46 @@
             z-index: 1000;
         }
 
-        .logo { font-weight: 800; font-size: 1.4rem; color: var(--royal-blue); }
-        .logo span { color: var(--deep-navy); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--accent-blue); }
+        .logo span { color: var(--primary-dark); }
 
-        .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
+        /* Desktop Nav Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
         .nav-links a { 
             text-decoration: none; 
-            color: var(--deep-navy); 
+            color: var(--primary-dark); 
             font-size: 0.85rem; 
             font-weight: 600;
             transition: 0.3s;
         }
-        .nav-links a:hover { color: var(--royal-blue); }
+
+        .nav-links a:hover { color: var(--accent-blue); }
 
         .btn-cta {
-            background: var(--royal-blue);
+            background: var(--accent-blue);
             color: var(--white) !important;
             padding: 10px 22px;
             border-radius: 6px;
             font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
         }
 
-        /* --- Sections --- */
-        section { padding: 100px 8%; }
+        /* Hamburger Icon Styling */
+        .menu-toggle {
+            display: none; /* Hidden on desktop */
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
 
+        /* --- Hero Section --- */
         .hero {
+            padding: 100px 8%;
             display: flex;
             align-items: center;
             background: var(--white);
@@ -90,21 +103,20 @@
             margin-bottom: 20px;
         }
 
-        .hero-content h1 span { color: var(--royal-blue); }
+        .hero-content h1 span { color: var(--accent-blue); }
         .hero-content p { font-size: 1.2rem; color: var(--slate); max-width: 650px; margin-bottom: 30px; }
 
-        /* --- Dark Blue Section (Update) --- */
+        /* --- Dark Blue Section --- */
         .bg-dark-section {
-            background-color: var(--dark-blue);
+            background-color: var(--secondary-dark);
             color: var(--white);
+            padding: 100px 8%;
         }
 
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 2.2rem; font-weight: 800; }
         .bg-dark-section .section-title h2 { color: var(--white); }
         .bg-dark-section .section-title p { color: var(--slate-light); margin-top: 10px; }
-        
-        .section-title p { color: var(--slate); margin-top: 10px; }
 
         .grid-container {
             display: grid;
@@ -118,39 +130,16 @@
             border-radius: 12px;
             border: 1px solid var(--border);
             transition: 0.3s;
-            color: var(--deep-navy); /* Keep text dark in white cards */
+            color: var(--primary-dark);
         }
 
-        .card:hover { transform: translateY(-5px); border-color: var(--royal-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card i { font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 20px; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
+        .card i { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 20px; }
         .card h3 { margin-bottom: 12px; font-weight: 700; font-size: 1.4rem; }
         .card p { color: var(--slate); font-size: 0.95rem; }
 
-        /* --- WhatsApp Floating Button --- */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp);
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .whatsapp-btn:hover { transform: scale(1.1); }
-
         /* --- Footer --- */
         .main-footer {
-            background-color: var(--white);
             padding: 80px 8% 40px;
             border-top: 1px solid var(--border);
         }
@@ -162,18 +151,50 @@
             margin-bottom: 50px;
         }
 
-        .footer-col h4 { font-weight: 700; margin-bottom: 20px; color: var(--royal-blue); }
-        .footer-col p, .footer-col a { font-size: 0.9rem; color: var(--slate); text-decoration: none; display: block; margin-bottom: 10px; }
-        .footer-col a:hover { color: var(--royal-blue); }
+        .footer-col h4 { font-weight: 700; margin-bottom: 20px; color: var(--accent-blue); }
+        .footer-col a, .footer-col p { font-size: 0.9rem; color: var(--slate); text-decoration: none; display: block; margin-bottom: 10px; }
 
-        .social-links { display: flex; gap: 15px; margin-top: 15px; }
-        .social-links a { font-size: 1.2rem; color: var(--deep-navy); transition: 0.3s; }
-        .social-links a:hover { color: var(--royal-blue); }
+        /* --- WhatsApp Button --- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+        }
 
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--slate); }
-
+        /* --- MOBILE NAV RESPONSIVENESS --- */
         @media (max-width: 968px) {
-            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hidden off-screen */
+                height: 100vh;
+                width: 75%;
+                background: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transition: 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                right: 0; /* Sliding in */
+            }
+
             .hero { text-align: center; padding-top: 50px; }
             .hero-content p { margin: 0 auto 30px; }
         }
@@ -183,128 +204,93 @@
 
     <nav class="navbar">
         <div class="logo">Edu<span>Consult</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Home</a></li>
             <li><a href="courses.html">Courses</a></li>
-            <li><a href="#counsellors">Counsellors</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#earn">Earn with us</a></li>
-            <li><a href="#contact" class="btn-cta">Contact</a></li>
+            <li><a href="counsellors.html">Counsellors</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="earn-with-us.html">Earn with us</a></li>
+            <li><a href="contact.html" class="btn-cta">Contact</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Stop Searching. <span>Start Your Journey.</span></h1>
-            <p>Don't get lost in the crowd. We provide genuine information directly from 100+ colleges to help you find the course that actually suits you.</p>
-            <a href="#courses" class="btn-cta" style="padding: 15px 40px; font-size: 1rem;">Explore 1000+ Courses</a>
+            <p>We provide genuine information directly from 100+ colleges to help you find the course that actually suits you.</p>
+            <a href="courses.html" class="btn-cta" style="padding: 15px 40px; font-size: 1rem;">Explore 1000+ Courses</a>
         </div>
     </section>
 
-    <section id="courses" class="bg-dark-section">
+    <section class="bg-dark-section">
         <div class="section-title">
-            <h2>Find the Course That Suits You</h2>
-            <p>1000+ Courses. 100+ Colleges. 100% Genuine Information.</p>
+            <h2>Why Choose Us?</h2>
+            <p>100% Safe and Secure Informed Choices</p>
         </div>
         <div class="grid-container">
             <div class="card">
                 <i class="fas fa-shield-alt"></i>
-                <h3>100% Safe & Secure</h3>
-                <p>We provide verified data directly from institutions. No middlemen, no confusion—just informed choices for your future.</p>
+                <h3>Verified Info</h3>
+                <p>Genuine information directly from institutions.</p>
             </div>
             <div class="card">
                 <i class="fas fa-hand-holding-usd"></i>
-                <h3>Educational Finance</h3>
-                <p>Unable to afford your dream course? We help you find scholarships and the best finance options to make it possible.</p>
+                <h3>Education Finance</h3>
+                <p>Helping you find scholarship and finance options.</p>
             </div>
             <div class="card">
-                <i class="fas fa-map-marked-alt"></i>
+                <i class="fas fa-bus"></i>
                 <h3>Campus Visit</h3>
-                <p>Make sure the campus is right for you. Experience the environment firsthand before you make your final decision.</p>
+                <p>Experience the campus firsthand before deciding.</p>
             </div>
         </div>
     </section>
 
-    <section id="counsellors">
-        <div class="section-title">
-            <h2>Experienced Counsellors</h2>
-            <p>Unsure or anxious about what to choose? Let us help you decide.</p>
-        </div>
-        <div class="grid-container">
-            <div class="card">
-                <i class="fas fa-comments"></i>
-                <h3>Personal Guidance</h3>
-                <p>Sit down with experts who listen to your goals and help you pick the right career path without the stress.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-check-double"></i>
-                <h3>Informed Decisions</h3>
-                <p>We analyze your strengths and match them with the best available courses and colleges in the country.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="bg-dark-section">
-        <div class="section-title">
-            <h2>What Students Say</h2>
-        </div>
-        <div class="grid-container">
-            <div class="card">
-                <p>"I was confused between three colleges. Their campus visit service helped me choose the one where I felt most comfortable."</p>
-                <br><strong>- Amit Verma</strong>
-            </div>
-            <div class="card">
-                <p>"They helped me get a scholarship when I thought I couldn't afford a private college. Truly life-changing!"</p>
-                <br><strong>- Neha Sharma</strong>
-            </div>
-        </div>
-    </section>
-
-    <section id="earn" style="text-align: center;">
-        <div class="section-title">
-            <h2>Join Our Partner Program</h2>
-            <p>Refer students to genuine courses and earn rewards. Let's grow together.</p>
-        </div>
-        <a href="#contact" class="btn-cta" style="padding: 18px 50px;">Become a Partner</a>
-    </section>
-
-    <footer class="main-footer" id="contact">
+    <footer class="main-footer">
         <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo">Edu<span>Consult</span></div>
-                <p style="margin-top: 15px;">Making high-quality education accessible and transparent for every student.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Our Office</h4>
-                <p>123 Education Lane, Tech Park,</p>
-                <p>Mumbai, Maharashtra, 400001</p>
-            </div>
             <div class="footer-col">
                 <h4>Support</h4>
                 <a href="mailto:support@educonsult.com">support@educonsult.com</a>
                 <p>+91 98765 43210</p>
-                <p>Mon-Sat: 10AM - 6PM</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
-                <a href="#courses">Courses</a>
-                <a href="#earn">Earn with Us</a>
-                <a href="#">Privacy Policy</a>
+                <h4>Social</h4>
+                <a href="https://instagram.com/yourprofile"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EduConsult. All genuine information directly from institutions.</p>
-        </div>
+        <div style="text-align:center; padding-top:20px; color:var(--slate);">&copy; 2026 EduConsult</div>
     </footer>
 
     <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            // Toggle between bars and X icon
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+    </script>
 </body>
 </html>
