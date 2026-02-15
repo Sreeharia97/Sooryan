@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduConsult | Professional Global Education</title>
+    <title>EduConsult | Your Bridge to the Right College</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     <style>
         :root {
             --white: #ffffff;
-            --light-blue: #f0f7ff; /* Arctic Blue */
+            --light-blue: #f0f7ff; 
             --royal-blue: #0056b3; 
             --deep-navy: #0a192f;  
             --slate: #64748b;
@@ -76,18 +76,18 @@
             display: flex;
             align-items: center;
             background: var(--white);
-            min-height: 60vh;
+            min-height: 75vh;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
         }
 
         .hero-content h1 span { color: var(--royal-blue); }
-        .hero-content p { font-size: 1.1rem; color: var(--slate); max-width: 600px; }
+        .hero-content p { font-size: 1.2rem; color: var(--slate); max-width: 650px; margin-bottom: 30px; }
 
         .bg-blue-section {
             background-color: var(--light-blue);
@@ -97,10 +97,11 @@
 
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 2.2rem; font-weight: 800; color: var(--royal-blue); }
+        .section-title p { color: var(--slate); margin-top: 10px; }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
@@ -113,54 +114,9 @@
         }
 
         .card:hover { transform: translateY(-5px); border-color: var(--royal-blue); }
-
-        /* --- Footer Section --- */
-        .main-footer {
-            background-color: var(--white);
-            padding: 80px 8% 40px;
-            border-top: 1px solid var(--border);
-            color: var(--deep-navy);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--royal-blue);
-        }
-
-        .footer-col p, .footer-col a {
-            font-size: 0.9rem;
-            color: var(--slate);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .footer-col a:hover { color: var(--royal-blue); }
-
-        .social-links { display: flex; gap: 15px; margin-top: 15px; }
-        .social-links a {
-            font-size: 1.2rem;
-            color: var(--deep-navy);
-            transition: 0.3s;
-        }
-        .social-links a:hover { color: #E1306C; } /* Instagram Pink */
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            font-size: 0.8rem;
-            color: var(--slate);
-        }
+        .card i { font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 12px; font-weight: 700; font-size: 1.3rem; }
+        .card p { color: var(--slate); font-size: 0.95rem; }
 
         /* --- WhatsApp Floating Button --- */
         .whatsapp-btn {
@@ -182,8 +138,33 @@
             transition: 0.3s;
         }
 
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--white);
+            padding: 80px 8% 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 { font-weight: 700; margin-bottom: 20px; color: var(--royal-blue); }
+        .footer-col p, .footer-col a { font-size: 0.9rem; color: var(--slate); text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-col a:hover { color: var(--royal-blue); }
+
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { font-size: 1.2rem; color: var(--deep-navy); }
+
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--slate); }
+
         @media (max-width: 968px) {
             .nav-links { display: none; }
+            .hero { text-align: center; }
+            .hero-content p { margin: 0 auto 30px; }
         }
     </style>
 </head>
@@ -203,108 +184,110 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Your Journey to <span>Global Success</span> Begins Here.</h1>
-            <p>Expert-led guidance for international admissions, visa strategy, and career pathing tailored to your dreams.</p>
+            <h1>Stop Searching. <span>Start Your Journey.</span></h1>
+            <p>Don't get lost in the crowd. We provide genuine information directly from 100+ colleges to help you find the course that actually suits you.</p>
+            <a href="#courses" class="btn-cta" style="padding: 15px 35px; font-size: 1rem;">Explore 1000+ Courses</a>
         </div>
     </section>
 
     <section id="courses" class="bg-blue-section">
         <div class="section-title">
-            <h2>Our Top Courses</h2>
+            <h2>Find the Course That Suits You</h2>
+            <p>1000+ Courses. 100+ Colleges. 100% Genuine Information.</p>
         </div>
         <div class="grid-container">
             <div class="card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Undergraduate</h3>
-                <p>Strategic placements for Bachelor's degrees in the USA, UK, Canada, and beyond.</p>
+                <i class="fas fa-shield-alt"></i>
+                <h3>100% Safe & Secure</h3>
+                <p>We provide verified data directly from institutions. No middlemen, no confusion—just informed choices for your future.</p>
             </div>
             <div class="card">
-                <i class="fas fa-book-open"></i>
-                <h3>Postgraduate</h3>
-                <p>Master's and MBA counseling with a focus on high-ranking Ivy League institutions.</p>
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Educational Finance</h3>
+                <p>Unable to afford your dream course? We help you find scholarships and the best finance options to make it possible.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Campus Visit</h3>
+                <p>Make sure the campus is right for you. Experience the environment firsthand before you make your final decision.</p>
             </div>
         </div>
     </section>
 
     <section id="counsellors">
         <div class="section-title">
-            <h2>Expert Counsellors</h2>
+            <h2>Experienced Counsellors</h2>
+            <p>Unsure or anxious about what to choose? Let us help you decide.</p>
         </div>
         <div class="grid-container">
             <div class="card">
-                <i class="fas fa-user-tie"></i>
-                <h3>Professional Mentors</h3>
-                <p>Connect with industry veterans who understand the global education landscape.</p>
+                <i class="fas fa-comments"></i>
+                <h3>Personal Guidance</h3>
+                <p>Sit down with experts who listen to your goals and help you pick the right career path without the stress.</p>
             </div>
             <div class="card">
-                <i class="fas fa-globe-americas"></i>
-                <h3>Global Alumni</h3>
-                <p>Get insights from former students who have successfully moved abroad.</p>
+                <i class="fas fa-check-double"></i>
+                <h3>Informed Decisions</h3>
+                <p>We analyze your strengths and match them with the best available courses and colleges in the country.</p>
             </div>
         </div>
     </section>
 
     <section id="testimonials" class="bg-blue-section">
         <div class="section-title">
-            <h2>Student Testimonials</h2>
+            <h2>What Students Say</h2>
         </div>
         <div class="grid-container">
             <div class="card">
-                <p>"The best decision I made for my career. The visa assistance was flawless."</p>
-                <br><strong>- Rahul M.</strong>
+                <p>"I was confused between three colleges. Their campus visit service helped me choose the one where I felt most comfortable."</p>
+                <br><strong>- Amit Verma</strong>
             </div>
             <div class="card">
-                <p>"They helped me get into my dream university with a scholarship!"</p>
-                <br><strong>- Sneha V.</strong>
+                <p>"They helped me get a scholarship when I thought I couldn't afford a private college. Truly life-changing!"</p>
+                <br><strong>- Neha Sharma</strong>
             </div>
         </div>
     </section>
 
     <section id="earn" style="text-align: center;">
         <div class="section-title">
-            <h2>Earn With Us</h2>
-            <p>Refer students and earn professional commissions upon successful enrollment.</p>
+            <h2>Join Our Partner Program</h2>
+            <p>Refer students to genuine courses and earn rewards. Let's grow together.</p>
         </div>
-        <a href="#contact" class="btn-cta" style="display: inline-block; padding: 15px 40px;">Join Partner Program</a>
+        <a href="#contact" class="btn-cta" style="display: inline-block; padding: 15px 40px;">Become a Partner</a>
     </section>
 
     <footer class="main-footer" id="contact">
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="logo">Edu<span>Consult</span></div>
-                <p style="margin-top: 15px;">Your trusted partner for international education and career success since 2026.</p>
+                <p style="margin-top: 15px;">Making high-quality education accessible and transparent for every student.</p>
                 <div class="social-links">
-                    <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
-
             <div class="footer-col">
-                <h4>Office Location</h4>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 123 Education Lane, Tech Hub,</p>
+                <h4>Our Office</h4>
+                <p>123 Education Lane, Tech Park,</p>
                 <p>Mumbai, Maharashtra, 400001</p>
-                <p>India</p>
             </div>
-
             <div class="footer-col">
-                <h4>Support & Contact</h4>
-                <a href="mailto:support@educonsult.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> support@educonsult.com</a>
-                <p><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> +91 98765 43210</p>
-                <p><i class="fas fa-clock" style="margin-right: 8px;"></i> Mon - Sat: 10 AM - 7 PM</p>
+                <h4>Support</h4>
+                <a href="mailto:support@educonsult.com">support@educonsult.com</a>
+                <p>+91 98765 43210</p>
+                <p>Mon-Sat: 10AM - 6PM</p>
             </div>
-
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#home">Home</a>
                 <a href="#courses">Courses</a>
-                <a href="#earn">Partnership</a>
+                <a href="#earn">Earn with Us</a>
                 <a href="#">Privacy Policy</a>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 EduConsult. All Rights Reserved. Built for Global Students.</p>
+            <p>&copy; 2026 EduConsult. All genuine information directly from institutions.</p>
         </div>
     </footer>
 
