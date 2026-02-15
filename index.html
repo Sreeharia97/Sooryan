@@ -13,10 +13,11 @@
     <style>
         :root {
             --white: #ffffff;
-            --light-blue: #f0f7ff; 
-            --royal-blue: #0056b3; 
-            --deep-navy: #0a192f;  
-            --slate: #64748b;
+            --dark-blue: #0f172a; /* New Deep Dark Blue Background */
+            --royal-blue: #2563eb; /* Vibrant Blue for Buttons/Links */
+            --deep-navy: #020617;  /* Heaviest Navy for Text */
+            --slate: #64748b;      /* Muted Text for White Backgrounds */
+            --slate-light: #94a3b8; /* Muted Text for Dark Backgrounds */
             --whatsapp: #25d366;
             --border: #e2e8f0;
         }
@@ -41,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 8%;
+            padding: 1.2rem 8%;
             background: var(--white);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -65,8 +66,11 @@
         .btn-cta {
             background: var(--royal-blue);
             color: var(--white) !important;
-            padding: 8px 18px;
-            border-radius: 5px;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
         }
 
         /* --- Sections --- */
@@ -89,14 +93,17 @@
         .hero-content h1 span { color: var(--royal-blue); }
         .hero-content p { font-size: 1.2rem; color: var(--slate); max-width: 650px; margin-bottom: 30px; }
 
-        .bg-blue-section {
-            background-color: var(--light-blue);
-            border-top: 1px solid #e1eefc;
-            border-bottom: 1px solid #e1eefc;
+        /* --- Dark Blue Section (Update) --- */
+        .bg-dark-section {
+            background-color: var(--dark-blue);
+            color: var(--white);
         }
 
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.2rem; font-weight: 800; color: var(--royal-blue); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.2rem; font-weight: 800; }
+        .bg-dark-section .section-title h2 { color: var(--white); }
+        .bg-dark-section .section-title p { color: var(--slate-light); margin-top: 10px; }
+        
         .section-title p { color: var(--slate); margin-top: 10px; }
 
         .grid-container {
@@ -107,15 +114,16 @@
 
         .card {
             background: var(--white);
-            padding: 40px;
+            padding: 45px;
             border-radius: 12px;
             border: 1px solid var(--border);
             transition: 0.3s;
+            color: var(--deep-navy); /* Keep text dark in white cards */
         }
 
-        .card:hover { transform: translateY(-5px); border-color: var(--royal-blue); }
+        .card:hover { transform: translateY(-5px); border-color: var(--royal-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .card i { font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 12px; font-weight: 700; font-size: 1.3rem; }
+        .card h3 { margin-bottom: 12px; font-weight: 700; font-size: 1.4rem; }
         .card p { color: var(--slate); font-size: 0.95rem; }
 
         /* --- WhatsApp Floating Button --- */
@@ -125,18 +133,20 @@
             right: 30px;
             background-color: var(--whatsapp);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             z-index: 1000;
             text-decoration: none;
             transition: 0.3s;
         }
+
+        .whatsapp-btn:hover { transform: scale(1.1); }
 
         /* --- Footer --- */
         .main-footer {
@@ -157,13 +167,14 @@
         .footer-col a:hover { color: var(--royal-blue); }
 
         .social-links { display: flex; gap: 15px; margin-top: 15px; }
-        .social-links a { font-size: 1.2rem; color: var(--deep-navy); }
+        .social-links a { font-size: 1.2rem; color: var(--deep-navy); transition: 0.3s; }
+        .social-links a:hover { color: var(--royal-blue); }
 
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--slate); }
 
         @media (max-width: 968px) {
             .nav-links { display: none; }
-            .hero { text-align: center; }
+            .hero { text-align: center; padding-top: 50px; }
             .hero-content p { margin: 0 auto 30px; }
         }
     </style>
@@ -186,11 +197,11 @@
         <div class="hero-content">
             <h1>Stop Searching. <span>Start Your Journey.</span></h1>
             <p>Don't get lost in the crowd. We provide genuine information directly from 100+ colleges to help you find the course that actually suits you.</p>
-            <a href="#courses" class="btn-cta" style="padding: 15px 35px; font-size: 1rem;">Explore 1000+ Courses</a>
+            <a href="#courses" class="btn-cta" style="padding: 15px 40px; font-size: 1rem;">Explore 1000+ Courses</a>
         </div>
     </section>
 
-    <section id="courses" class="bg-blue-section">
+    <section id="courses" class="bg-dark-section">
         <div class="section-title">
             <h2>Find the Course That Suits You</h2>
             <p>1000+ Courses. 100+ Colleges. 100% Genuine Information.</p>
@@ -233,7 +244,7 @@
         </div>
     </section>
 
-    <section id="testimonials" class="bg-blue-section">
+    <section id="testimonials" class="bg-dark-section">
         <div class="section-title">
             <h2>What Students Say</h2>
         </div>
@@ -254,7 +265,7 @@
             <h2>Join Our Partner Program</h2>
             <p>Refer students to genuine courses and earn rewards. Let's grow together.</p>
         </div>
-        <a href="#contact" class="btn-cta" style="display: inline-block; padding: 15px 40px;">Become a Partner</a>
+        <a href="#contact" class="btn-cta" style="padding: 18px 50px;">Become a Partner</a>
     </section>
 
     <footer class="main-footer" id="contact">
