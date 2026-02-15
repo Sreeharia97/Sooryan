@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduConsult | International Education Partners</title>
+    <title>EduConsult | Professional Global Education</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            --alabaster: #fafaf9;   /* Main Background */
-            --midnight: #0f172a;    /* Primary Text & Dark Sections */
-            --slate-blue: #64748b;  /* Sub-headings */
-            --accent: #2563eb;      /* Brand Blue */
-            --border: #e2e8f0;      /* Hairline borders */
             --white: #ffffff;
+            --light-blue: #f0f7ff; /* Subtle blue background */
+            --royal-blue: #0056b3; /* Primary brand color */
+            --deep-navy: #0a192f;  /* Text and accent color */
+            --slate: #64748b;
+            --whatsapp: #25d366;
         }
 
         * {
@@ -31,230 +30,217 @@
         html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--alabaster);
-            color: var(--midnight);
-            line-height: 1.7;
+            background-color: var(--white);
+            color: var(--deep-navy);
+            line-height: 1.6;
         }
 
-        /* --- Sophisticated Navigation --- */
+        /* --- Navigation --- */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 10%;
-            background: rgba(250, 250, 249, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
+            padding: 1rem 8%;
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.4rem; 
-            letter-spacing: -0.5px;
-            color: var(--midnight);
-        }
-        .logo span { color: var(--accent); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--royal-blue); }
+        .logo span { color: var(--deep-navy); }
 
-        .nav-links { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
         .nav-links a { 
             text-decoration: none; 
-            color: var(--midnight); 
-            font-size: 0.9rem; 
-            font-weight: 500;
+            color: var(--deep-navy); 
+            font-size: 0.85rem; 
+            font-weight: 600;
             transition: 0.3s;
         }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover { color: var(--royal-blue); }
 
-        .btn-nav {
-            background: var(--midnight);
+        .btn-cta {
+            background: var(--royal-blue);
             color: var(--white) !important;
-            padding: 10px 24px;
-            border-radius: 4px;
-            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 5px;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero (White Background) --- */
         .hero {
-            padding: 120px 10%;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            padding: 100px 8%;
+            display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--alabaster) 60%, #f1f5f9 100%);
-            min-height: 85vh;
+            background: var(--white);
+            min-height: 70vh;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
             font-weight: 800;
-            line-height: 1;
-            letter-spacing: -2px;
-            margin-bottom: 25px;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        .hero-content h1 span {
-            display: block;
-            color: var(--accent);
+        .hero-content h1 span { color: var(--royal-blue); }
+        .hero-content p { font-size: 1.1rem; color: var(--slate); max-width: 600px; margin-bottom: 30px; }
+
+        /* --- Blue Background Section (Courses/Services) --- */
+        .bg-blue-section {
+            background-color: var(--light-blue);
+            padding: 100px 8%;
+            border-top: 1px solid #e1eefc;
+            border-bottom: 1px solid #e1eefc;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--slate-blue);
-            max-width: 550px;
-            margin-bottom: 40px;
-        }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; font-weight: 800; color: var(--royal-blue); }
 
-        .cta-group { display: flex; gap: 15px; }
-
-        .btn-primary {
-            text-decoration: none;
-            background: var(--accent);
-            color: var(--white);
-            padding: 16px 35px;
-            border-radius: 4px;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2); }
-
-        /* --- Stats Integrated Section --- */
-        .stats-strip {
-            padding: 40px 10%;
-            display: flex;
-            gap: 60px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stat-item b { font-size: 1.5rem; display: block; }
-        .stat-item span { font-size: 0.8rem; color: var(--slate-blue); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* --- Services Section --- */
-        .services {
-            padding: 120px 10%;
-            background: var(--white);
-        }
-
-        .section-header {
-            max-width: 600px;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
-        .section-header p { color: var(--slate-blue); }
-
-        .services-grid {
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .service-card {
-            padding: 50px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            transition: 0.4s;
-        }
-
-        .service-card:hover {
-            background: var(--midnight);
-            border-color: var(--midnight);
-        }
-
-        .service-card:hover h3, .service-card:hover p, .service-card:hover i {
-            color: var(--white);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 30px;
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
             transition: 0.3s;
         }
 
-        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 700; }
-        .service-card p { color: var(--slate-blue); font-size: 1rem; }
+        .card:hover { transform: translateY(-5px); border-color: var(--royal-blue); box-shadow: 0 10px 20px rgba(0,86,179,0.05); }
+        .card i { font-size: 2rem; color: var(--royal-blue); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 10px; font-weight: 700; }
+
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover { transform: scale(1.1); background-color: #20ba5a; }
 
         /* --- Footer --- */
-        footer {
-            padding: 60px 10%;
-            background: var(--alabaster);
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--slate-blue);
-            font-size: 0.9rem;
-        }
+        footer { padding: 50px 8%; text-align: center; background: var(--white); border-top: 1px solid #e2e8f0; color: var(--slate); }
 
-        /* Mobile Optimization */
         @media (max-width: 968px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 60px; }
-            .hero-content p { margin: 0 auto 40px; }
-            .cta-group { justify-content: center; }
-            .stats-strip { flex-wrap: wrap; justify-content: center; gap: 30px; }
             .nav-links { display: none; }
+            .hero { text-align: center; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">Edu<span>Consult.</span></div>
+        <div class="logo">Edu<span>Consult</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Expertise</a></li>
-            <li><a href="#contact" class="btn-nav">Get Started</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#counsellors">Counsellors</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#earn">Earn with us</a></li>
+            <li><a href="#contact" class="btn-cta">Contact</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Expert Guidance for Your <span>Academic Journey.</span></h1>
-            <p>Empowering students to reach their full potential through strategic university selection and seamless admission management.</p>
-            <div class="cta-group">
-                <a href="#services" class="btn-primary">Our Expertise</a>
-            </div>
+            <h1>Your Journey to <span>Global Success</span> Begins Here.</h1>
+            <p>Expert-led guidance for international admissions, visa strategy, and career pathing.</p>
         </div>
-        <div class="hero-visual">
-            </div>
     </section>
 
-    <section class="stats-strip">
-        <div class="stat-item"><b>500+</b><span>Successful Admissons</span></div>
-        <div class="stat-item"><b>15+</b><span>Global Countries</span></div>
-        <div class="stat-item"><b>100%</b><span>Dedication</span></div>
+    <section id="courses" class="bg-blue-section">
+        <div class="section-title">
+            <h2>Our Top Courses</h2>
+        </div>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Undergraduate</h3>
+                <p>Find the best global universities for your bachelor's degree.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-book-open"></i>
+                <h3>Postgraduate</h3>
+                <p>Strategic counseling for Masters and MBA applications.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-certificate"></i>
+                <h3>Specialized Diplomas</h3>
+                <p>Vocational training and short-term courses for skill building.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="services" class="services">
-        <div class="section-header">
-            <h2>Our Core Expertise</h2>
-            <p>Comprehensive solutions designed to navigate the complexities of international education.</p>
+    <section id="counsellors" style="padding: 100px 8%;">
+        <div class="section-title">
+            <h2>Expert Counsellors</h2>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-university"></i>
-                <h3>University Selection</h3>
-                <p>We curate a personalized list of institutions that align with your academic background and career goals.</p>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Senior Mentors</h3>
+                <p>Learn from professionals with 10+ years of education experience.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-file-signature"></i>
-                <h3>Admission Support</h3>
-                <p>From drafting your SOP to final application submission, we ensure every detail is perfect.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-passport"></i>
-                <h3>Visa Assistance</h3>
-                <p>Navigating visa protocols with expert documentation support and interview coaching.</p>
+            <div class="card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our team is available round the clock to solve your queries.</p>
             </div>
         </div>
     </section>
+
+    <section id="testimonials" class="bg-blue-section">
+        <div class="section-title">
+            <h2>Student Success Stories</h2>
+        </div>
+        <div class="grid-container">
+            <div class="card">
+                <p>"EduConsult made my dream of studying in the UK a reality. Highly recommended!"</p>
+                <br>
+                <strong>- Aryan S.</strong>
+            </div>
+            <div class="card">
+                <p>"The visa process was so smooth. I didn't have to worry about a single document."</p>
+                <br>
+                <strong>- Priya K.</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="earn" style="padding: 100px 8%; text-align: center;">
+        <div class="section-title">
+            <h2>Earn With Us</h2>
+            <p>Join our affiliate program and help your friends find their path while earning rewards.</p>
+        </div>
+        <a href="#contact" class="btn-cta" style="display: inline-block; padding: 15px 30px;">Become a Partner</a>
+    </section>
+
+    <a href="https://wa.me/yourphonenumber" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <footer>
-        <div class="footer-logo"><b>EduConsult</b></div>
-        <div class="copyright">&copy; 2026 EduConsult. All rights reserved.</div>
+        <p>&copy; 2026 EduConsult. Your Trusted Education Partner.</p>
     </footer>
 
 </body>
