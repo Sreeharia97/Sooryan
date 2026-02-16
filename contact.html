@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Eminent Career Space</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --dark-blue: #0f172a; 
+            --royal-blue: #2563eb; 
+            --deep-navy: #020617;  
+            --slate: #64748b;
+            --slate-light: #94a3b8;
+            --whatsapp: #25d366;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--white); color: var(--deep-navy); line-height: 1.6; overflow-x: hidden; }
+
+        /* --- Navigation --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 8%;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .brand-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            color: var(--deep-navy);
+            line-height: 1.1;
+            letter-spacing: 1px;
+        }
+
+        .brand-text span {
+            color: var(--royal-blue);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .logo img {
+            height: 75px;
+            width: auto;
+            max-width: 250px;
+            object-fit: contain;
+        }
+
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--deep-navy); font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--royal-blue); }
+
+        .btn-cta { background: var(--royal-blue); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; }
+
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--deep-navy); }
+        .close-menu { display: none; }
+
+        /* --- Sections --- */
+        section { padding: 80px 8%; }
+
+        .hero { display: flex; align-items: center; background: var(--white); min-height: 40vh; text-align: center; }
+        .hero-content { width: 100%; }
+        .hero-content h1 { font-size: clamp(2.3rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero-content h1 span { color: var(--royal-blue); }
+        .hero-content p { font-size: 1.1rem; color: var(--slate); max-width: 700px; margin: 0 auto; }
+
+        /* --- Contact Layout --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
+        .info-item i { color: var(--royal-blue); font-size: 1.3rem; margin-top: 5px; }
+        .info-item h4 { font-weight: 800; font-size: 1rem; margin-bottom: 5px; }
+        .info-item p, .info-item a { color: var(--slate); font-size: 0.95rem; text-decoration: none; }
+
+        /* Form */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--royal-blue); }
+
+        .bg-dark-section { background-color: var(--dark-blue); color: var(--white); text-align: center; }
+
+        /* --- Footer --- */
+        .main-footer { background-color: var(--white); padding: 80px 8% 40px; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { font-weight: 700; margin-bottom: 20px; color: var(--royal-blue); }
+        .social-links { display: flex; gap: 20px; margin-top: 20px; }
+        .social-links a { font-size: 1.4rem; color: var(--deep-navy); }
+
+        /* --- Mobile --- */
+        @media (max-width: 968px) {
+            .menu-toggle { display: block; }
+            .close-menu { display: block; align-self: flex-end; margin-bottom: 20px; font-size: 1.8rem; cursor: pointer; color: var(--royal-blue); padding: 10px; }
+            .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; background: var(--white); flex-direction: column; justify-content: flex-start; padding: 40px 20px; gap: 1.5rem; transition: 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+            .nav-links.active { right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="brand-text">EMINENT<span>CAREER SPACE</span></div>
+            <img src="logo.png" alt="Eminent Career Space Logo">
+        </a>
+        
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        
+        <ul class="nav-links" id="nav-list">
+            <li class="close-menu" id="close-btn"><i class="fas fa-times"></i></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="counsellors.html">Counsellors</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="earn-with-us.html">Earn with us</a></li>
+            <li><a href="contact.html" class="btn-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reach Out to <span>Our Team</span></h1>
+            <p>Have questions? We are here to provide the clarity you need. Contact <b>Eminent Career Space</b> for 100% genuine institutional guidance.</p>
+        </div>
+    </section>
+
+    <section style="background: #f8fafc;">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Office Location</h4>
+                        <p>123 Education Lane, Tech Park,<br>Mumbai, Maharashtra, 400001</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Support</h4>
+                        <a href="mailto:sooryanbrahma121@gmail.com">sooryanbrahma121@gmail.com</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Call / WhatsApp</h4>
+                        <p>+91 97783 32106</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Sat: 10 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" id="subject" placeholder="What are you inquiring about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-cta" style="width: 100%; padding: 15px;">Send Inquiry to WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark-section">
+        <div class="section-title" style="margin-bottom: 0;">
+            <h2>We Value Your Future</h2>
+            <p style="color: var(--slate-light); margin-top: 10px;">Expect a professional response from our counsellors within 24 hours.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="brand-text" style="margin-bottom:10px;">EMINENT<span>CAREER SPACE</span></div>
+                <p>Trustworthy information for every step of your education journey since 2026.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/eminent_careerspace?igsh=dmtyYzE3Zzh3NWJj&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <p>sooryanbrahma121@gmail.com</p>
+                <p>+91 97783 32106</p>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--slate); margin-top: 40px;">
+            &copy; 2026 Eminent Career Space. All genuine information directly from institutions.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const myNumber = "919778332106"; 
+            const whatsappMsg = `*General Inquiry for Eminent Career Space*%0A%0A` +
+                                `*Name:* ${name}%0A` +
+                                `*Subject:* ${subject}%0A` +
+                                `*Message:* ${message}`;
+
+            window.open(`https://wa.me/${myNumber}?text=${whatsappMsg}`, '_blank');
+        });
+
+        // Navigation Logic
+        const menuToggle = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => { navList.classList.add('active'); });
+        closeBtn.addEventListener('click', () => { navList.classList.remove('active'); });
+    </script>
+</body>
+</html>
