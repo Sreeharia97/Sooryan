@@ -77,7 +77,7 @@
         .nav-links a { text-decoration: none; color: var(--deep-navy); font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--royal-blue); }
 
-        .btn-cta { background: var(--royal-blue); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; display: inline-block; }
+        .btn-cta { background: var(--royal-blue); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; }
 
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--deep-navy); }
         .close-menu { display: none; }
@@ -95,6 +95,7 @@
             width: 100%;
             border-radius: 20px;
             box-shadow: 20px 20px 0px rgba(37, 99, 235, 0.1);
+            object-fit: cover;
         }
 
         /* --- Cards & Grid --- */
@@ -106,16 +107,16 @@
 
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
-        .card { background: var(--white); padding: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; color: var(--deep-navy); }
-        .card-img { width: 100%; height: 180px; object-fit: cover; }
-        .card-body { padding: 30px; }
+        .card { background: var(--white); padding: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; color: var(--deep-navy); display: flex; flex-direction: column; }
+        .card-img { width: 100%; height: 200px; object-fit: cover; background-color: #f1f5f9; }
+        .card-body { padding: 25px; flex-grow: 1; }
         .card:hover { transform: translateY(-5px); border-color: var(--royal-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card i { font-size: 2rem; color: var(--royal-blue); margin-bottom: 15px; }
+        .card i { font-size: 1.8rem; color: var(--royal-blue); margin-bottom: 15px; display: block; }
         .card h3 { margin-bottom: 10px; font-weight: 700; font-size: 1.3rem; }
         .card p { color: var(--slate); font-size: 0.95rem; }
 
         /* --- Testimonials --- */
-        .testimonial-card { background: var(--white); padding: 35px; border-radius: 12px; position: relative; }
+        .testimonial-card { background: var(--white); padding: 35px; border-radius: 12px; color: var(--deep-navy); }
         .user-info { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
         .user-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--royal-blue); }
 
@@ -143,7 +144,7 @@
             .menu-toggle { display: block; }
             .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; background: var(--white); flex-direction: column; padding: 40px 20px; transition: 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
             .nav-links.active { right: 0; }
-            .close-menu { display: block; align-self: flex-end; font-size: 1.8rem; cursor: pointer; color: var(--royal-blue); }
+            .close-menu { display: block; align-self: flex-end; font-size: 1.8rem; cursor: pointer; color: var(--royal-blue); margin-bottom: 20px;}
         }
     </style>
 </head>
@@ -172,11 +173,11 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Stop Searching. <span>Start Your Journey.</span></h1>
-                <p>Don't get lost in the crowd. We provide genuine information directly from 100+ colleges to help you find the course that actually suits you with <b>Eminent Career Space</b>.</p>
+                <p>Don't get lost in the crowd. We provide genuine information directly from 100+ colleges to help you find the course that actually suits you.</p>
                 <a href="courses.html" class="btn-cta" style="padding: 15px 40px; font-size: 1rem;">Explore 1000+ Courses</a>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Students studying together">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop" alt="Students collaboration">
             </div>
         </div>
     </section>
@@ -188,7 +189,7 @@
         </div>
         <div class="grid-container">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756defe93?auto=format&fit=crop&q=80&w=500" class="card-img" alt="Safe education">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Security and Trust">
                 <div class="card-body">
                     <i class="fas fa-shield-alt"></i>
                     <h3>100% Safe & Secure</h3>
@@ -196,7 +197,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=500" class="card-img" alt="Financial aid">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Finance and Scholarships">
                 <div class="card-body">
                     <i class="fas fa-hand-holding-usd"></i>
                     <h3>Educational Finance</h3>
@@ -204,7 +205,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=500" class="card-img" alt="College Campus">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756defe93?q=80&w=800&auto=format&fit=crop" class="card-img" alt="College Campus">
                 <div class="card-body">
                     <i class="fas fa-bus"></i>
                     <h3>Campus Visit</h3>
@@ -220,14 +221,14 @@
             <p>Unsure or anxious about what to choose? We can help you decide.</p>
         </div>
         <div class="grid-container">
-            <div class="card">
-                <div class="card-body">
+            <div class="card" style="flex-direction: row; align-items: center; padding: 20px;">
+                 <div class="card-body">
                     <i class="fas fa-user-tie"></i>
                     <h3>Professional Advice</h3>
                     <p>Our experts cut through the noise to find you the path that matches your true potential.</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="flex-direction: row; align-items: center; padding: 20px;">
                 <div class="card-body">
                     <i class="fas fa-info-circle"></i>
                     <h3>Direct Insights</h3>
@@ -248,7 +249,7 @@
                     <img src="https://i.pravatar.cc/150?u=arjun" alt="Arjun Mehta">
                     <div>
                         <strong>Arjun Mehta</strong>
-                        <p style="font-size: 0.8rem; margin:0;">Engineering Student</p>
+                        <p style="font-size: 0.8rem; color: var(--slate);">Engineering Student</p>
                     </div>
                 </div>
             </div>
@@ -258,7 +259,7 @@
                     <img src="https://i.pravatar.cc/150?u=sarah" alt="Sarah Khan">
                     <div>
                         <strong>Sarah Khan</strong>
-                        <p style="font-size: 0.8rem; margin:0;">Medical Student</p>
+                        <p style="font-size: 0.8rem; color: var(--slate);">Medical Student</p>
                     </div>
                 </div>
             </div>
@@ -273,7 +274,6 @@
                 <div class="social-links">
                     <a href="https://www.instagram.com/eminent_careerspace" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
 
@@ -296,7 +296,6 @@
                 <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 Eminent Career Space. All genuine information directly from institutions.</p>
         </div>
