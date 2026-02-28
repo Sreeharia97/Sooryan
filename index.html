@@ -28,44 +28,31 @@
         /* Navigation */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 8%; background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
         .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
-        
-        .logo img { 
-            height: 60px; 
-            width: auto; 
-            max-width: 200px; 
-            object-fit: contain;
-            display: block; /* Ensures no extra spacing underneath */
-        }
+        .logo img { height: 60px; width: auto; object-fit: contain; }
         
         .brand-text { font-weight: 800; font-size: 1.1rem; text-transform: uppercase; color: var(--deep-navy); line-height: 1.1; letter-spacing: 1px; }
         .brand-text span { color: var(--royal-blue); font-size: 0.9rem; display: block; }
 
         .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--deep-navy); font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
-        .nav-links a:hover { color: var(--royal-blue); }
-        .btn-cta { background: var(--royal-blue); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; }
+        .nav-links a { text-decoration: none; color: var(--deep-navy); font-size: 0.85rem; font-weight: 600; }
+        .btn-cta { background: var(--royal-blue); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; }
 
-        /* Remaining CSS unchanged for brevity... */
+        /* Sections */
         section { padding: 80px 8%; }
-        .hero { display: flex; align-items: center; background: var(--white); min-height: 80vh; }
+        .hero { display: flex; align-items: center; min-height: 80vh; }
         .hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .hero-content h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
         .hero-content h1 span { color: var(--royal-blue); }
-        .hero-image img { width: 100%; border-radius: 20px; box-shadow: 20px 20px 0px rgba(37, 99, 235, 0.1); object-fit: cover; }
+        .hero-image img { width: 100%; border-radius: 20px; box-shadow: 20px 20px 0px rgba(37, 99, 235, 0.1); }
+        
         .bg-dark-section { background-color: var(--dark-blue); color: var(--white); }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; color: var(--deep-navy); display: flex; flex-direction: column; }
-        .card-img { width: 100%; height: 200px; object-fit: cover; background-color: #f1f5f9; }
-        .card-body { padding: 25px; flex-grow: 1; }
+        .card { background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--border); color: var(--deep-navy); }
+        
         .main-footer { background-color: var(--white); padding: 80px 8% 40px; border-top: 1px solid var(--border); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
         
-        @media (max-width: 968px) {
-            .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; background: var(--white); flex-direction: column; padding: 40px 20px; transition: 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
-            .nav-links.active { right: 0; }
-        }
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -75,20 +62,40 @@
             <img src="./logo.png" alt="Eminent Career Space Logo">
             <div class="brand-text">EMINENT<span>CAREER SPACE</span></div>
         </a>
-        
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        
-        <ul class="nav-links" id="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="contact.html" class="btn-cta">Contact</a></li>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#" class="btn-cta">Contact</a></li>
         </ul>
     </nav>
 
-    <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-        menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
-    </script>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Stop Searching. <span>Start Your Journey.</span></h1>
+                <p>We provide genuine information from 100+ colleges.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000" alt="Students">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark-section">
+        <div class="grid-container">
+            <div class="card"><h3>100% Safe & Secure</h3><p>Genuine information only.</p></div>
+            <div class="card"><h3>Educational Finance</h3><p>We help find scholarships.</p></div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div><h4>Contact</h4><p>sooryanbrahma121@gmail.com</p></div>
+            <div><h4>Quick Links</h4><p>Browse Courses</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919778332106" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
 </body>
 </html>
